@@ -1,0 +1,5 @@
+# Per-developer agent preferences — local only, never committed.
+agents/personal-context.md
+
+# Cross-session continuity logs — local only, never committed.
+agents/cache/
