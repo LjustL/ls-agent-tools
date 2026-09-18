@@ -69,8 +69,9 @@ a file that is not there is worse than an empty table — an agent will go looki
 
 **Pick a prefix that fits your project.** The skills here are prefixed `ls-` (for this
 repo, `ls-agent-tools`). Choose your own logical prefix and rename the three skill
-directories to match — updating their table rows in `agents/agent-instructions.md` and
-the handful of intra-skill path references. The prefix is not decoration: nothing here
+directories to match — updating their table rows in `agents/agent-instructions.md`, the
+path examples inside each skill, the cross-references between skills and resource docs,
+and this README's structure tree. `grep -rn skills/` finds them all. The prefix is not decoration: nothing here
 is registered with a harness, so a bare name like `review` handed to a harness's skill
 loader fuzzy-matches a *built-in* (Claude Code ships a `code-review`) and silently runs
 the wrong thing. A distinctive per-project prefix keeps your skills from colliding with
