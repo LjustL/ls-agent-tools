@@ -29,11 +29,11 @@ agents/
 │   ├── philosophy.md
 │   └── debugging-pitfalls.md
 └── skills/
-    ├── gh/                      GitHub CLI usage
-    ├── review/                  diff review, with triggered checks
+    ├── ls-gh/                   GitHub CLI usage
+    ├── ls-review/               diff review, with triggered checks
     │   ├── match_checks.py
     │   └── checks/
-    └── session-log-mining/      mining logs for recurring problems
+    └── ls-session-log-mining/   mining logs for recurring problems
 ```
 
 The entry points at the root are redirects and nothing else. Every harness reads a
@@ -57,7 +57,7 @@ Carry over everything except two directories' contents:
 - **`agents/resources/`** — copy the directory, not the documents in it. `philosophy.md`
   is about this framework rather than your project, and `debugging-pitfalls.md` is an
   empty destination that fills itself in over time.
-- **`agents/skills/review/checks/`** — same. `philosophy-adherence.md` exists to
+- **`agents/skills/ls-review/checks/`** — same. `philosophy-adherence.md` exists to
   demonstrate the check format, and it only means anything alongside `philosophy.md`.
 
 Everything else transfers as-is and works immediately: the three entry stubs,
@@ -67,6 +67,16 @@ One thing to fix after copying: remove the Resources table rows in
 `agents/agent-instructions.md` for the documents you did not bring. An index pointing at
 a file that is not there is worse than an empty table — an agent will go looking for it.
 
+**Pick a prefix that fits your project.** The skills here are prefixed `ls-` (for this
+repo, `ls-agent-tools`). Choose your own logical prefix and rename the three skill
+directories to match — updating their table rows in `agents/agent-instructions.md`, the
+path examples inside each skill, the cross-references between skills and resource docs,
+and this README's structure tree. `grep -rn skills/` finds them all. The prefix is not decoration: nothing here
+is registered with a harness, so a bare name like `review` handed to a harness's skill
+loader fuzzy-matches a *built-in* (Claude Code ships a `code-review`) and silently runs
+the wrong thing. A distinctive per-project prefix keeps your skills from colliding with
+whatever built-ins your harness provides.
+
 ## What to populate
 
 The parts you copied empty are not setup work waiting to be finished. They fill in as
@@ -74,7 +84,7 @@ you work, and each has a mechanism that fills it.
 
 - **`agents/resources/`** — starts empty. It fills with the design documents and
   hard-won facts that your agents would otherwise rediscover by reading code.
-- **`agents/skills/review/checks/`** — also starts empty. Real checks come from noticing
+- **`agents/skills/ls-review/checks/`** — also starts empty. Real checks come from noticing
   what reviews keep missing, which is what session log mining is for. Expect early
   reviews to lean entirely on the baseline pass.
 - **The General Coding Practice section** of the instructions — ships with two rules

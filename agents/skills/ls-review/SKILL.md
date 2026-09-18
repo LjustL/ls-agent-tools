@@ -34,10 +34,10 @@ differs.
 **1. Determine which checks apply.**
 
 ```
-agents/skills/review/match_checks.py                  # working tree against HEAD
-agents/skills/review/match_checks.py HEAD~1           # one commit
-agents/skills/review/match_checks.py main...HEAD      # a branch
-gh pr diff 123 | agents/skills/review/match_checks.py # a PR, or any diff on stdin
+agents/skills/ls-review/match_checks.py                  # working tree against HEAD
+agents/skills/ls-review/match_checks.py HEAD~1           # one commit
+agents/skills/ls-review/match_checks.py main...HEAD      # a branch
+gh pr diff 123 | agents/skills/ls-review/match_checks.py # a PR, or any diff on stdin
 ```
 
 The script matches changed file paths against each check's `triggers` and prints the
@@ -78,7 +78,7 @@ signature from the primary instructions.
 When you encounter a category of problem worth checking for repeatedly — something you
 had to reason out from scratch that will come up again — propose a new check file.
 
-Create `agents/skills/review/checks/<name>.md`:
+Create `agents/skills/ls-review/checks/<name>.md`:
 
 ```markdown
 ---

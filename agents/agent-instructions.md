@@ -194,11 +194,19 @@ Skills live in `agents/skills/<name>/SKILL.md`. They are not registered with any
 harness — you are responsible for recognizing when one applies and reading it before
 acting. The user is not expected to invoke them by name.
 
+**Read these files directly; do not invoke them through a harness skill mechanism.**
+Because nothing here is registered, a name like `review` handed to a harness's skill
+loader will fuzzy-match some *built-in* skill (Claude Code ships a `code-review`, for
+instance) and you will silently run the wrong thing. The skill names are prefixed
+(`ls-`) to make that collision less likely, but the reliable path is to open the
+`SKILL.md` at the path below and follow it. The table is the index; a skill not in it
+will not be found.
+
 | Skill | Use When |
 | --- | --- |
-| [`skills/gh/SKILL.md`](skills/gh/SKILL.md) | Any interaction with GitHub: pull requests, issues, comments, reviews, checks, or the GitHub API. |
-| [`skills/review/SKILL.md`](skills/review/SKILL.md) | Reviewing a diff: a chunk review during implementation, a holistic branch or PR review, or any request to review code. |
-| [`skills/session-log-mining/SKILL.md`](skills/session-log-mining/SKILL.md) | Mining session logs for recurring debugging pitfalls and review misses worth turning into durable guidance. |
+| [`skills/ls-gh/SKILL.md`](skills/ls-gh/SKILL.md) | Any interaction with GitHub: pull requests, issues, comments, reviews, checks, or the GitHub API. |
+| [`skills/ls-review/SKILL.md`](skills/ls-review/SKILL.md) | Reviewing a diff: a chunk review during implementation, a holistic branch or PR review, or any request to review code. |
+| [`skills/ls-session-log-mining/SKILL.md`](skills/ls-session-log-mining/SKILL.md) | Mining session logs for recurring debugging pitfalls and review misses worth turning into durable guidance. |
 
 Read the whole `SKILL.md` before acting on it, along with any supplemental files it
 lists.

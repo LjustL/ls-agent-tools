@@ -79,7 +79,7 @@ The destination follows from the category:
   [`resources/debugging-pitfalls.md`](../../resources/debugging-pitfalls.md). These are
   facts that save rediscovery; they are knowledge, not enforcement.
 - **Recurring review misses** become a new check under
-  `agents/skills/review/checks/`, or an addition to an existing one. A review miss that
+  `agents/skills/ls-review/checks/`, or an addition to an existing one. A review miss that
   keeps happening is exactly the thing a check exists to catch, and putting it in a
   resource instead means relying on someone remembering to look.
 - **Remarkable comments** have no fixed home. Propose one and say why.
