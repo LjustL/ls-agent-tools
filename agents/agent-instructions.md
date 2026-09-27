@@ -143,6 +143,10 @@ a later mistake. Review findings are fixed in follow-up commits.
 
 Do not push unless the user asks you to.
 
+**Subject line only.** A commit message is a single subject line followed by the
+attribution trailer. No body: no explanation, no summary of changes, no bullet list.
+The diff carries the detail.
+
 **Do not amend.** The two exceptions are removing a secret and being explicitly asked
 to. Everything else — a typo in the message, a file you meant to include, a fix to the
 commit you just made — is a new commit.
