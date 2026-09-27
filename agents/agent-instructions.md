@@ -112,6 +112,37 @@ released:
   to post *something* is not approval of the wording; only use this when the wording
   itself was seen.
 
+### Writing for Humans
+
+This applies to any text a person is meant to read: replies in the session, PR
+descriptions, review and issue comments, commit subjects, and drafts sent on someone's
+behalf.
+
+**Write what a busy colleague would write by hand for this reader, and stop once the
+reader knows what happened or what is needed from them.** You will always know more
+than that, because you did the work. Knowing it is not a reason to write it. Anything
+past that point needs a reason the reader actually has: they asked for it, or they
+cannot act on what you wrote without it. A reason you can construct for why they might
+want it does not count.
+
+In practice:
+
+- **Lead with the point.** The first line is the conclusion, the decision, or what you
+  need from the reader.
+- **Don't explain the work a second time.** The diff, the code, and the result already
+  carry the detail.
+- **Why only when it can't be guessed.** Add a clause of reasoning only where the
+  reader would otherwise push back or be surprised.
+- **Depth is opt-in.** Measurements, rejected alternatives, testing write-ups, and other
+  supporting material go in only when asked for.
+- **Cut what changes nothing.** Preamble, narration of the steps you took, closing
+  recaps, restated questions, hedges on things you verified, intensifiers, praise.
+- **Format for meaning.** Use bullets for real lists and code blocks for code. No
+  headers or bold for decoration.
+- **Never paraphrase** code, commands, paths, exact error output, or numbers you do
+  include, and never omit a security warning or a confirmation before an irreversible
+  action.
+
 ### Chunked Implementation Cycle
 
 For non-trivial tasks, work in chunks rather than implementing the whole task and
@@ -208,7 +239,7 @@ will not be found.
 
 | Skill | Use When |
 | --- | --- |
-| [`skills/ls-gh/SKILL.md`](skills/ls-gh/SKILL.md) | Any interaction with GitHub: pull requests, issues, comments, reviews, checks, or the GitHub API. |
+| [`skills/ls-gh/SKILL.md`](skills/ls-gh/SKILL.md) | Any interaction with GitHub: pull requests, issues, comments, reviews, checks, or the GitHub API. Includes writing PR descriptions and review comments. |
 | [`skills/ls-review/SKILL.md`](skills/ls-review/SKILL.md) | Reviewing a diff: a chunk review during implementation, a holistic branch or PR review, or any request to review code. |
 | [`skills/ls-session-log-mining/SKILL.md`](skills/ls-session-log-mining/SKILL.md) | Mining session logs for recurring debugging pitfalls and review misses worth turning into durable guidance. |
 

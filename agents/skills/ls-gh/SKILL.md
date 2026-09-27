@@ -58,6 +58,62 @@ pagination:
 gh api repos/{owner}/{repo}/pulls/123/files --paginate
 ```
 
+## Writing for GitHub readers
+
+Follow **Writing for Humans** in `agents/agent-instructions.md`. On top of that:
+
+- If the repo has a PR or issue template, fill it in rather than replacing it.
+- Review comments carry one issue each, anchored to the line it is about, and start
+  with a Conventional Comments label: `issue (blocking):`, `suggestion:`, `nit:`,
+  `question:`.
+- When a fix is concrete, propose it as a suggested change (below) rather than
+  describing it.
+- Posted text is addressed to the reader. Never mention your own tooling, skills, or
+  review process in it.
+
+## Suggested changes
+
+Whenever a fix is concrete and confined to contiguous lines in the diff, post it as a
+suggested change so the author can accept it with one click. Put **one fix per
+comment**. If you bundle fixes, the author cannot accept one and decline another.
+
+A suggestion is a fenced block with the `suggestion` language tag. It replaces the
+commented line range exactly, so write whole lines with their original indentation:
+
+````
+nit: `len()` is already an int; the cast is redundant.
+
+```suggestion
+    count = len(items)
+```
+````
+
+For a multi-line range, set `start_line` as well as `line`. Both must be lines in the
+diff, on the `RIGHT` side for new code.
+
+`gh pr comment` cannot anchor to a line. Post inline comments as a review through the
+API instead. Every comment body carries the attribution signature, placed outside the
+suggestion block:
+
+```
+gh api repos/{owner}/{repo}/pulls/123/reviews --input - <<'EOF'
+{
+  "event": "COMMENT",
+  "body": "No blocking issues; two nits inline.\n\n_(Authored by ...)_",
+  "comments": [
+    {
+      "path": "src/foo.py",
+      "line": 42,
+      "side": "RIGHT",
+      "body": "nit: ...\n\n```suggestion\n    count = len(items)\n```\n\n_(Authored by ...)_"
+    }
+  ]
+}
+EOF
+```
+
+Omitting `event` leaves the review pending and invisible to the author.
+
 ## Before acting outward
 
 Creating a PR, posting a comment, merging, or closing something is visible to other
