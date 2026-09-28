@@ -129,6 +129,9 @@ rather than sending all of it at once.
 
 - **Summarizing a change:** one line per change the reader would notice, with related
   changes merged. Not one line per file or function.
+- **Summarizing something large:** the reader's budget sets the size, not the source. A
+  2,000-line diff gets the same screen as a 50-line one. More material means each line
+  covers more ground, not more lines or longer ones.
 - **Why only where it would surprise them:** add a clause of reasoning only when the
   change would look wrong without it.
 - **More only on request:** measurements, rejected alternatives, testing detail, and
