@@ -118,31 +118,9 @@ This applies to any text a person is meant to read: replies in the session, PR
 descriptions, review and issue comments, commit subjects, and drafts sent on someone's
 behalf.
 
-**Write to what a busy colleague would actually read.** Assume they have a queue of
-other things waiting. They will read about one screen: a line or two of summary and up
-to around ten short bullets. Past that, they skim or stop, and whatever is there is
-lost. That screen is a ceiling, not a target. How much you know about the topic does
-not change it.
-
-If something genuinely does not fit, split it into chunks and send the first one,
-rather than sending all of it at once.
-
-- **Summarizing a change:** one line per change the reader would notice, with related
-  changes merged. Not one line per file or function.
-- **Summarizing something large:** the reader's budget sets the size, not the source. A
-  2,000-line diff gets the same screen as a 50-line one. More material means each line
-  covers more ground, not more lines or longer ones.
-- **Why only where it would surprise them:** add a clause of reasoning only when the
-  change would look wrong without it.
-- **More only on request:** measurements, rejected alternatives, testing detail, and
-  reading guides go in when asked for.
-- **Lead with the point.** No preamble, no narration of the steps you took, no closing
-  recap.
-- **Format for meaning.** Use bullets for real lists and code blocks for code. No
-  headers or bold for decoration.
-- **Never paraphrase** code, commands, paths, exact error output, or numbers you do
-  include, and never omit a security warning or a confirmation before an irreversible
-  action.
+**Be considerate of the reader's time.** They have other things waiting and will not
+read more than they need to. Don't write what they won't read. How much you know about
+the topic is not a reason to write more.
 
 ### Chunked Implementation Cycle
 
