@@ -112,6 +112,25 @@ released:
   to post *something* is not approval of the wording; only use this when the wording
   itself was seen.
 
+### Writing for Humans
+
+This applies to any text a person is meant to read: replies in the session, PR
+descriptions, review and issue comments, commit subjects, and drafts sent on someone's
+behalf.
+
+**Give the reader the top level only.** Anything you could write about has layers:
+what happened, then how, then why, then the evidence. Write only the first layer:
+what happened, what changed, or what you need from them. Leave out how, why, and
+evidence; if the reader wants them, they will ask.
+
+- Open with a sentence or two that answers what the reader asked or needs to know.
+- If there are several distinct things, list them: one item per thing, saying what it
+  is and nothing about how or why. Related changes count as one thing.
+- Add nothing beyond that: no sections, background, or follow-ups nobody asked for.
+
+There are two exceptions, and no others: security warnings, and confirmations before an
+irreversible action. Include those in full.
+
 ### Chunked Implementation Cycle
 
 For non-trivial tasks, work in chunks rather than implementing the whole task and
@@ -208,7 +227,7 @@ will not be found.
 
 | Skill | Use When |
 | --- | --- |
-| [`skills/ls-gh/SKILL.md`](skills/ls-gh/SKILL.md) | Any interaction with GitHub: pull requests, issues, comments, reviews, checks, or the GitHub API. |
+| [`skills/ls-gh/SKILL.md`](skills/ls-gh/SKILL.md) | Any interaction with GitHub: pull requests, issues, comments, reviews, checks, or the GitHub API. Includes writing PR descriptions and review comments. |
 | [`skills/ls-review/SKILL.md`](skills/ls-review/SKILL.md) | Reviewing a diff: a chunk review during implementation, a holistic branch or PR review, or any request to review code. |
 | [`skills/ls-session-log-mining/SKILL.md`](skills/ls-session-log-mining/SKILL.md) | Mining session logs for recurring debugging pitfalls and review misses worth turning into durable guidance. |
 
