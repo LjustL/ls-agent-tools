@@ -118,9 +118,18 @@ This applies to any text a person is meant to read: replies in the session, PR
 descriptions, review and issue comments, commit subjects, and drafts sent on someone's
 behalf.
 
-**Be considerate of the reader's time.** They have other things waiting and will not
-read more than they need to. Don't write what they won't read. How much you know about
-the topic is not a reason to write more.
+**Give the reader the top level only.** Anything you could write about has layers:
+what happened, then how, then why, then the evidence. Write only the first layer:
+what happened, what changed, or what you need from them. Leave out how, why, and
+evidence; if the reader wants them, they will ask.
+
+- Open with a sentence or two that answers what the reader asked or needs to know.
+- If there are several distinct things, list them: one item per thing, saying what it
+  is and nothing about how or why. Related changes count as one thing.
+- Add nothing beyond that: no sections, background, or follow-ups nobody asked for.
+
+There are two exceptions, and no others: security warnings, and confirmations before an
+irreversible action. Include those in full.
 
 ### Chunked Implementation Cycle
 
