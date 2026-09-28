@@ -118,25 +118,23 @@ This applies to any text a person is meant to read: replies in the session, PR
 descriptions, review and issue comments, commit subjects, and drafts sent on someone's
 behalf.
 
-**Write what a busy colleague would write by hand for this reader, and stop once the
-reader knows what happened or what is needed from them.** You will always know more
-than that, because you did the work. Knowing it is not a reason to write it. Anything
-past that point needs a reason the reader actually has: they asked for it, or they
-cannot act on what you wrote without it. A reason you can construct for why they might
-want it does not count.
+**Write to what a busy colleague would actually read.** Assume they have a queue of
+other things waiting. They will read about one screen: a line or two of summary and up
+to around ten short bullets. Past that, they skim or stop, and whatever is there is
+lost. That screen is a ceiling, not a target. How much you know about the topic does
+not change it.
 
-In practice:
+If something genuinely does not fit, split it into chunks and send the first one,
+rather than sending all of it at once.
 
-- **Lead with the point.** The first line is the conclusion, the decision, or what you
-  need from the reader.
-- **Don't explain the work a second time.** The diff, the code, and the result already
-  carry the detail.
-- **Why only when it can't be guessed.** Add a clause of reasoning only where the
-  reader would otherwise push back or be surprised.
-- **Depth is opt-in.** Measurements, rejected alternatives, testing write-ups, and other
-  supporting material go in only when asked for.
-- **Cut what changes nothing.** Preamble, narration of the steps you took, closing
-  recaps, restated questions, hedges on things you verified, intensifiers, praise.
+- **Summarizing a change:** one line per change the reader would notice, with related
+  changes merged. Not one line per file or function.
+- **Why only where it would surprise them:** add a clause of reasoning only when the
+  change would look wrong without it.
+- **More only on request:** measurements, rejected alternatives, testing detail, and
+  reading guides go in when asked for.
+- **Lead with the point.** No preamble, no narration of the steps you took, no closing
+  recap.
 - **Format for meaning.** Use bullets for real lists and code blocks for code. No
   headers or bold for decoration.
 - **Never paraphrase** code, commands, paths, exact error output, or numbers you do
